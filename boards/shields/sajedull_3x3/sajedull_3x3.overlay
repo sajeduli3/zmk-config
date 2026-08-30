@@ -31,4 +31,10 @@
             RC(2,0) RC(2,1) RC(2,2)
         >;
     };
+
+    physical_layout0: physical_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "3x3";
+        transform = <&default_transform>;
+    };
 };
