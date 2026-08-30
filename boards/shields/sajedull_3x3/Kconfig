@@ -1,0 +1,3 @@
+config SHIELD_SAJEDULL_3X3
+    def_bool $(shields_list_contains,sajedull_3x3)
+
