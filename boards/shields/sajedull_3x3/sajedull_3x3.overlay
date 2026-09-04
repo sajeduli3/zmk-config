@@ -1,8 +1,4 @@
 / {
-    /*
-     * Minimal dummy KScan.
-     * We are not testing the keyboard matrix yet.
-     */
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
 
@@ -25,11 +21,6 @@
     };
 };
 
-/*
- * Nice!Nano standard I2C:
- * P0.17 = SDA
- * P0.20 = SCL
- */
 &i2c0 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_STANDARD>;
