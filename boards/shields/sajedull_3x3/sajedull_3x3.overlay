@@ -2,17 +2,17 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
 
+        diode-direction = "col2row";
+
         row-gpios =
-    <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-    <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-    <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
         col-gpios =
             <&gpio0 24 GPIO_ACTIVE_HIGH>,
             <&gpio1 0 GPIO_ACTIVE_HIGH>,
             <&gpio0 11 GPIO_ACTIVE_HIGH>;
-
-        diode-direction = "col2row";
     };
 
     chosen {
@@ -21,13 +21,14 @@
     };
 };
 
-&i2c0 {
+&pro_micro_i2c {
     status = "okay";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
+
+        label = "DISPLAY";
 
         width = <128>;
         height = <32>;
@@ -40,6 +41,8 @@
         segment-remap;
         com-invdir;
         com-sequential;
+
+        inversion-on;
 
         prechargep = <0x22>;
     };
