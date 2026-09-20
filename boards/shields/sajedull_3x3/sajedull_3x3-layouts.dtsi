@@ -1,0 +1,23 @@
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+
+        display-name = "3x3";
+
+        transform = <&default_transform>;
+
+        keys = <
+        0 0
+        1 0
+        2 0
+
+        0 1
+        1 1
+        2 1
+
+        0 2
+        1 2
+        2 2
+        >;
+    };
+};
