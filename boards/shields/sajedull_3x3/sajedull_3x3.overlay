@@ -8,21 +8,20 @@
     };
 
     kscan0: kscan0 {
-        compatible = "zmk,kscan-gpio-matrix";
+    compatible = "zmk,kscan-gpio-matrix";
 
-        diode-direction = "col2row";
-        wakeup-source;
+    diode-direction = "col2row";
 
-        row-gpios =
-            <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    row-gpios =
+        <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+        <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-        col-gpios =
-            <&gpio0 24 GPIO_ACTIVE_HIGH>,
-            <&gpio0 0 GPIO_ACTIVE_HIGH>,
-            <&gpio0 11 GPIO_ACTIVE_HIGH>;
-    };
+    col-gpios =
+        <&gpio0 24 GPIO_ACTIVE_HIGH>,
+        <&gpio0 0  GPIO_ACTIVE_HIGH>,
+        <&gpio0 11 GPIO_ACTIVE_HIGH>;
+};
 
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
@@ -36,17 +35,4 @@
             RC(2,0) RC(2,1) RC(2,2)
         >;
     };
-
-    vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
-
-        io-channels = <&adc 2>;
-
-        output-ohms = <2000000>;
-        full-ohms = <2806000>;
-    };
-};
-
-&adc {
-    status = "okay";
 };
