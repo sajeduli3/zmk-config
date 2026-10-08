@@ -5,11 +5,21 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* Layer 0 */
         default_layer {
             bindings = <
                 &kp N1  &kp N2  &kp N3
                 &kp N4  &kp N5  &kp N6
-                &kp N7  &kp N8  &studio_unlock
+                &kp N7  &mo 1  &studio_unlock
+            >;
+        };
+
+        /* Layer 1 */
+        layer_1 {
+            bindings = <
+                &kp HOME  &kp UP    &kp END
+                &kp LEFT  &kp DOWN  &kp RIGHT
+                &kp PG_UP &trans    &studio_unlock
             >;
         };
     };
